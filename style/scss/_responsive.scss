@@ -1,0 +1,33 @@
+.show-mb {display:none !important;}
+.hide-mb {display:block !important;}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+	
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+	.show-mb {display:block !important;}
+	.hide-mb {display:none !important;}
+	header {text-align: center;
+		img {margin:0 auto; width:50% !important;}
+		.cart {position:fixed; bottom:20%; right:20px; z-index: 9999;}
+	}
+	.rd-hide {display: none !important;}
+	footer .info-text h1 {font-size:20px;} 
+	.col-md-3 {
+		img {font-size:50% !important;}
+	}
+	.col-md-4 {margin-bottom:$margin;}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}

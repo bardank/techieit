@@ -1,0 +1,114 @@
+body{
+    visibility: hidden;
+} 
+.loading-animation{
+    height: 50%;
+    width: 50%;
+    justify-content: center;
+    align-items: flex-end;
+    display: none;
+    margin: 0 auto;
+}
+.loading-animation svg{
+    display: felx;
+    justify-content: center;
+    margin: 0 auto;
+}
+.st0-loading{fill:#1569A9;}
+.st1-loading{fill:#6E6D6E;}
+.st2-loading{fill:#08ACDA;}
+
+
+/* navigation */
+.navigation .hamburger-menu{
+    width: 65px;
+    height: 65px;
+    background-color: #5d5d9e;
+    position: fixed;
+    top: 2rem;
+    right: .9rem;
+    outline: none ;
+    border-radius: 50%;
+    z-index: 300;
+    transition: all 0.5s;
+    
+    
+    
+}
+.navigation .hamburger-menu .line1, .line2, .line3{
+    height: 2px;
+    width: 30px;
+    background: #eee;
+    margin: 5px;
+    transition: all 0.5s;
+}
+.navigation .nav-content{
+    display: none;
+}
+.navigation .bg-cover{
+    background-color: #121f35f2;
+    height: 55px;
+    width: 55px;
+    position: fixed;
+    z-index: 200;
+    top: 2.2rem;
+    right: 1.1rem;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+    
+
+.change {
+    .hamburger-menu{
+        background: #eef0eb;
+        .line1{
+            transform:  rotate(-405deg) translate(-5px, 5px);
+            background: #777;
+        }
+        .line2{
+            opacity: 0;
+        }
+        .line3{
+            transform:  rotate(405deg) translate(-5px, -5px);
+            background: #777;
+        }
+    }
+    .bg-cover{
+        transform: scale(150);
+        overflow-y: scroll;
+    }
+    .nav-content{
+        display: block;
+        position: fixed;
+        z-index: 250;
+        width: 100%;
+        
+    }
+    .link-item{
+        font-size: 1.2rem;
+        color: #eee;
+        border-bottom: 1px solid #eee;
+        transition: all 0.5s;
+        
+    }
+    .link-item:hover{
+        color: yellow;
+        border-bottom: 1px solid yellow;
+        background: #363b448f;
+    }
+    .active{
+        color: yellow;
+        border-bottom: 1px solid yellow;
+    }
+}
+
+header ul li {
+    display: inline-block !important;
+}
+header ul li:last-child {
+    font-size: inherit !important;
+    padding: inherit !important;
+    border-radius: inherit !important;
+    border: none !important;
+    margin-left: inherit !important;
+}

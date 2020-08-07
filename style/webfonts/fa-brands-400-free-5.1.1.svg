@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="no"?>
+<!--
+Font Awesome Pro 5.7.2 by @fontawesome - https://fontawesome.com
+License - https://fontawesome.com/license (Commercial License)
+-->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20190112 at Wed Feb 13 11:34:11 2019
+ By Robert Madole
+Copyright (c) Font Awesome
+</metadata>
+<defs>
+<font id="FontAwesome5Brands-Regular" horiz-adv-x="410" >
+  <font-face 
+    font-family="Font Awesome 5 Brands Regular"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 5 3 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="0 -32 410.22 416"
+    underline-thickness="25"
+    underline-position="-51"
+    unicode-range="U+0020-F7E3"
+  />
+    <missing-glyph />
+    <glyph glyph-name="rev" unicode="&#xf5b2;" 
+d="M270.67 173.11c0 -36.1602 -29.4102 -65.5703 -65.5596 -65.5703c-36.1504 0 -65.5703 29.4102 -65.5703 65.5703c0 36.1592 29.4102 65.5596 65.5703 65.5596c36.1592 0 65.5596 -29.4004 65.5596 -65.5596zM410.22 178.16v-210.16h-210.16v0.129883
+c-110.939 2.69043 -200.06 93.3896 -200.06 204.98c0 108.529 84.3096 197.319 191.01 204.569v38.3203l108.76 -62.7803l-108.76 -62.79v39.1201c-80.0293 -7.16016 -142.99 -74.5693 -142.99 -156.43c0 -86.6201 70.4707 -157.09 157.091 -157.09
+s157.09 70.4697 157.09 157.09c0 55.1895 -28.6406 103.79 -71.8105 131.82l45.3799 26.1992c44.2207 -36.6299 72.8301 -91.4297 74.3203 -152.979h0.129883z" />
+  </font>
+</defs></svg>

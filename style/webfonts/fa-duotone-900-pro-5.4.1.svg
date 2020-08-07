@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="no"?>
+<!--
+Font Awesome Pro 5.10.0-11 by @fontawesome - https://fontawesome.com
+License - https://fontawesome.com/license (Commercial License)
+-->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20190112 at Tue Jun 25 15:53:23 2019
+ By Robert Madole
+Copyright (c) Font Awesome
+</metadata>
+<defs>
+<font id="FontAwesome5Duotone-Solid" horiz-adv-x="512" >
+  <font-face 
+    font-family="Font Awesome 5 Duotone Solid"
+    font-weight="900"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 5 3 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="-0.00390625 -64.0039 511.983 447.973"
+    underline-thickness="25"
+    underline-position="-51"
+    unicode-range="U+0020-10F89B"
+  />
+    <missing-glyph />
+    <glyph glyph-name="wand-primary" unicode="&#xf72a;" 
+d="M507.87 401.79l-91.8701 -101.79v-28c0 -8.83203 -7.16797 -16 -16 -16h-23.6602l-279.18 -309.47c-5.25977 -5.81445 -15.8916 -10.5342 -23.7314 -10.5342c-7.31738 0 -17.4551 4.2002 -22.6289 9.37402l-41.4297 41.4297
+c-5.17383 5.17383 -9.37402 15.3115 -9.37402 22.6289c0 7.83984 4.71973 18.4717 10.5342 23.7314l117.47 105.97v36.8701c0 8.83203 7.16797 16 16 16h42.5996l279.19 251.86c2.51953 2.26953 7.31738 4.1123 10.71 4.1123c3.64746 0 8.70508 -2.08887 11.29 -4.66309
+l19.4795 -19.4697c2.60156 -2.58887 4.71387 -7.66992 4.71387 -11.3398c0 -3.39258 -1.84277 -8.19043 -4.11328 -10.71z" />
+  </font>
+</defs></svg>

@@ -2,14 +2,33 @@
   "name": "techieit",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12.x",
+    "yarn": "1.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "apollo-boost": "^0.4.9",
+    "bootstrap": "^4.5.0",
+    "file-loader": "^6.0.0",
+    "graphql": "^15.3.0",
+    "graphql-tag": "^2.10.4",
+    "gsap": "^3.4.2",
+    "jquery": "^3.5.1",
+    "moment": "^2.27.0",
     "next": "9.4.4",
+    "node-sass": "^4.14.1",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-apollo": "^3.1.5",
+    "react-dom": "16.13.1",
+    "react-gsap": "^2.2.1",
+    "sass": "^1.26.10",
+    "scrollmagic": "^2.0.7",
+    "url-loader": "^4.1.0"
   }
 }

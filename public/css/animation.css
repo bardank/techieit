@@ -1,0 +1,21 @@
+.banner{
+    height: 100vh;
+}
+.loading-animation{
+    height: 50%;
+    width: 50%;
+    justify-content: center;
+    align-items: flex-end;
+    display: table;
+    margin: 0 auto;
+}
+.loading-animation svg{
+    
+    display: felx;
+    justify-content: center;
+    
+    margin: 0 auto;
+}
+.st0{fill:#1569A9;}
+.st1{fill:#6E6D6E;}
+.st2{fill:#08ACDA;}
