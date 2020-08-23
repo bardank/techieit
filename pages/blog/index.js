@@ -1,134 +1,193 @@
-import React,{Fragment} from 'react'
-import WhatweDo from '../../components/WhatweDo';
-import Icon from '../../components/UI/Icon';
-import {ALL_POSTS} from '../../queries/posts';
-import {Query} from "@apollo/react-components";
-import Head from 'next/head';
+import React, { Fragment } from "react";
+import WhatweDo from "../../components/WhatweDo";
+import Icon from "../../components/UI/Icon";
+import { ALL_POSTS } from "../../queries/posts";
+import { Query } from "@apollo/react-components";
+import Head from "next/head";
+import moment from "moment";
+import Link from "next/link";
+import Spinner from '../../components/UI/Spinner';
 
 function Index(props) {
     const renderPage = function (loading, error, data, refetch) {
         if (loading) {
-          return (
-            <div>
-              loading data
-            </div>
-          );
+            return <Spinner />;
         }
         if (error) {
-          console.log(error);
-          return <h1>error</h1>;
+            console.log(error);
+            return <h1 className="d-none">error</h1>;
         }
-        console.log(data.posts.edges);
+        console.log(data.posts.nodes);
         return (
-          <Fragment>
-            <h1>Search Result</h1>
-            
-          </Fragment>
+            <Fragment>
+                {data.posts.nodes.map((post, i) => {
+                    if (i % 2 === 0) {
+                        return (
+                            <div className="col-md-6" key={post.postId}>
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <div className="date">
+                                            {moment(post.date).date()}
+                                            <span>
+                                                {moment()
+                                                    .month(
+                                                        moment(
+                                                            post.date
+                                                        ).month()
+                                                    )
+                                                    .format("MMM")}
+                                                , {moment(post.date).year()}
+                                            </span>
+                                        </div>
+                                        <h4>
+                                            <Link
+                                                href="/blog/[blogId]"
+                                                as={`/blog/${post.postId}`}
+                                                passHref
+                                            >
+                                            <a>{post.title}</a>
+                                            </Link>
+                                        </h4>
+                                        <p
+                                            className=""
+                                            dangerouslySetInnerHTML={{
+                                                __html: post.content,
+                                            }}
+                                        ></p>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="img-area">
+                                            {post.featuredImage
+                                                .mediaItemUrl && (
+                                                <Link
+                                                    href="/blog/[blogId]"
+                                                    as={`/blog/${post.postId}`}
+                                                    passHref
+                                                >
+                                                    <a>
+                                                        <img
+                                                            src={
+                                                                post
+                                                                    .featuredImage
+                                                                    .mediaItemUrl
+                                                            }
+                                                            className="img-fluid"
+                                                            alt=""
+                                                        />
+                                                    </a>
+                                                </Link>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    } else {
+                        return (
+                            <div className="col-md-6" key={post.postId}>
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <div className="img-area">
+                                            {post.featuredImage
+                                                .mediaItemUrl && (
+                                                <Link
+                                                    href="/blog/[blogId]"
+                                                    as={`/blog/${post.postId}`}
+                                                    passHref
+                                                >
+                                                <a >
+                                                    <img
+                                                        src={
+                                                            post.featuredImage
+                                                                .mediaItemUrl
+                                                        }
+                                                        className="img-fluid"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                </Link>
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="date">
+                                            {moment(post.date).date()}
+                                            <span>
+                                                {moment()
+                                                    .month(
+                                                        moment(
+                                                            post.date
+                                                        ).month()
+                                                    )
+                                                    .format("MMM")}
+                                                , {moment(post.date).year()}
+                                            </span>
+                                        </div>
+                                        <h4>
+                                            <Link
+                                                href="/blog/[blogId]"
+                                                as={`/blog/${post.postId}`}
+                                                passHref
+                                            >
+                                            <a>{post.title}</a>
+                                            </Link>
+                                        </h4>
+                                        <p
+                                            className=""
+                                            dangerouslySetInnerHTML={{
+                                                __html: post.content,
+                                            }}
+                                        ></p>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    }
+                })}
+            </Fragment>
         );
-    }
-    return(
+    };
+    return (
         <Fragment>
-                <Head>
-                    <title>Techie IT : Blog</title>
-                </Head>
+            <Head>
+                <title>Techie IT : Blog</title>
+            </Head>
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 rd-pag">
                         <span>Blogs</span>
                         <span>
-                            <Icon/>
+                            <Icon />
                         </span>
                     </div>
                 </div>
             </div>
-            <Query query={ALL_POSTS}>
-                {
-                    ({loading, error, data, refetch}) => {
-                        return renderPage(loading, error, data, refetch)
-                    }
-                }
-            </Query>
+
             <div className="main-contain">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 title">
-                            <h1>B<span>logs</span></h1>
+                            <h1>
+                                B<span>logs</span>
+                            </h1>
                         </div>
                     </div>
                     <div className="row blog">
-                        <div className="col-md-6">
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <div className="date">
-                                        19
-                                        <span>June, 2020</span>
-                                    </div>
-                                    <h4><a href="#">Why Keywords Are No Longer the  Center Stage of SEO</a></h4>
-                                    <p><a href="#">What you need to know, in a nutshell, is this: If you want to rank high on Google search results, your marketing efforts need to focus on your users and their customer journey. SEO boils down to producing quality content and aligning your information with the way users search online.</a></p>
-                                </div>	
-                                <div className="col-md-6">
-                                    <div className="img-area">
-                                        <a href="#"><img src="img/blog/1.png" className="img-fluid" alt=""/></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <div className="img-area">
-                                        <a href="#"><img src="img/blog/1.png" className="img-fluid" alt=""/></a>
-                                    </div>
-                                </div>
-                                <div className="col-md-6">
-                                    <div className="date">
-                                        29
-                                        <span>April, 2020</span>
-                                    </div>
-                                    <h4><a href="#">How to Build a  Successful Ecommerce Marketing Strategy </a></h4>
-                                    <p><a href="#">What you need to know, in a nutshell, is this: If you want to rank high on Google search results, your marketing efforts need to focus on your users and their customer journey. SEO boils down to producing quality content and aligning your information with the way users search online.</a></p>
-                                </div>	
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <div className="date">
-                                        19
-                                        <span>June, 2020</span>
-                                    </div>
-                                    <h4><a href="#">Why Keywords Are No Longer the  Center Stage of SEO</a></h4>
-                                    <p><a href="#">What you need to know, in a nutshell, is this: If you want to rank high on Google search results, your marketing efforts need to focus on your users and their customer journey. SEO boils down to producing quality content and aligning your information with the way users search online.</a></p>
-                                </div>	
-                                <div className="col-md-6">
-                                    <div className="img-area">
-                                        <a href="#"><img src="img/blog/1.png" className="img-fluid" alt=""/></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <div className="img-area">
-                                        <a href="#"><img src="img/blog/1.png" className="img-fluid" alt="" /></a>
-                                    </div>
-                                </div>
-                                <div className="col-md-6">
-                                    <div className="date">
-                                        29
-                                        <span>April, 2020</span>
-                                    </div>
-                                    <h4><a href="#">How to Build a  Successful Ecommerce Marketing Strategy </a></h4>
-                                    <p><a href="#">What you need to know, in a nutshell, is this: If you want to rank high on Google search results, your marketing efforts need to focus on your users and their customer journey. SEO boils down to producing quality content and aligning your information with the way users search online.</a></p>
-                                </div>	
-                            </div>
-                        </div>
+                        <Query query={ALL_POSTS}>
+                            {({ loading, error, data, refetch }) => {
+                                return renderPage(
+                                    loading,
+                                    error,
+                                    data,
+                                    refetch
+                                );
+                            }}
+                        </Query>
                     </div>
                 </div>
             </div>
-            <WhatweDo/>
+            <WhatweDo />
         </Fragment>
-    )
+    );
 }
 export default Index;

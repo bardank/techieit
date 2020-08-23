@@ -23,6 +23,7 @@ export const  POST_ID = gql`
                 link
                 mediaItemUrl
             }
+            title
         }
     }
 `
