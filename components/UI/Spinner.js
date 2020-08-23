@@ -43,7 +43,7 @@ const Spinner = () => {
             .loader-spinner:after {
             width: 5.2em;
             height: 10.2em;
-            background: #4e6766;
+            background: #0dc5c1;
             border-radius: 0 10.2em 10.2em 0;
             top: -0.1em;
             left: 4.9em;
